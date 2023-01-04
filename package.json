@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "joi": "^17.7.0",
+    "morgan": "^1.10.0",
+    "rethinkdb": "^2.4.2",
+    "thinky": "^2.3.9"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
