@@ -15,17 +15,43 @@ const createUser = async (userDetails) =>{
 };
 
 const getAllUsers = () => {
-    return new Promise(async (resolve, reject)=> {
-        try {
-            const users = await User.filter({});
-            resolve(users);
-        } catch (error) {
-            reject(error);
-        }        
-    })
-}
+  return new Promise(async (resolve, reject) => {
+    try {
+      const users = await User.filter({});
+      resolve(users);
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
+
+const updateUser = async (id, updUser) => {
+  return new Promise(async (resolve, reject) => {
+    const user = new User(updUser);
+
+    try {
+      const result = User.get(id).update(user).run();
+      resolve(result);
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
+
+const deleteUser = async (id) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const result = User.get(id).delete().run();
+      resolve(result);
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
 
 module.exports = {
   createUser,
   getAllUsers,
+  updateUser,
+  deleteUser,
 };

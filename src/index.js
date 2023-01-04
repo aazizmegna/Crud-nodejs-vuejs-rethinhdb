@@ -13,7 +13,7 @@ const app = express();
 
 //all the midlewares
 app.use(cors());
-app.use(morgan("common"));
+app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extendet: true }));
 
