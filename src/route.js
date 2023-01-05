@@ -20,7 +20,7 @@ router.use(bodyParser.json());
 //Create
 router.post("/createuser", async (req, res) => {
   try {
-    const value = req.body;
+    const value = req.body.user;
     const result = await createUser(value);
     res.send({
       msg: "User created successfully",
